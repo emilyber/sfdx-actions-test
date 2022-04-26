@@ -1,0 +1,6 @@
+name: first-action
+  on:
+    push:
+      step:
+        - name: npm-version
+          run: npm -v
