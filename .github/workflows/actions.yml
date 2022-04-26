@@ -2,6 +2,6 @@ name: first-action
 on: [push]
 jobs:
   runs-shell-commands:
-    step:
+    steps:
       - name: npm-version
         run: npm -v
