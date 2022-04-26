@@ -10,9 +10,9 @@ jobs:
           test = "123"
           print(test)
           if "1" in test:
-          print("hello")
+            print("hello")
           else:
-          print("bye")
+            print("bye")
         shell: python
       - name: npm-version
         run: |
