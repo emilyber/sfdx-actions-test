@@ -5,4 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: npm-version
-        run: npm -v
+        run: |
+          npm -v
+          node -v
+          npm install sfdx-cli --global
+          npm install @salesforce/cli --global
