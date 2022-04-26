@@ -10,3 +10,4 @@ jobs:
           node -v
           npm install sfdx-cli --global
           npm install @salesforce/cli --global
+          sfdx -v
