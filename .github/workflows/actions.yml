@@ -4,6 +4,16 @@ jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
     steps:
+      - name: python commands
+        run: |
+          print("Hello World")
+          test = "123"
+          print(test)
+          if "1" in test:
+          print("hello")
+          else:
+          print("bye")
+        shell: python
       - name: npm-version
         run: |
           npm -v
@@ -11,3 +21,4 @@ jobs:
           npm install sfdx-cli --global
           npm install @salesforce/cli --global
           sfdx -v
+      
