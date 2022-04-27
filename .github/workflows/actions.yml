@@ -10,5 +10,5 @@ jobs:
       uses: actions/hello-world-javascript-action@master
       with:
         who-to-greet: emily
-      name: logando
-      run: echo "{{ steps.greet.outputs.time }}"
+      - name: logando
+        run: echo "{{ steps.greet.outputs.time }}"
