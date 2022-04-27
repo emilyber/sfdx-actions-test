@@ -1,24 +1,14 @@
-name: first-action
+name: actions-example
 on: [push]
+
 jobs:
-  runs-shell-commands:
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: python commands
-        run: |
-          print("Hello World")
-          test = "123"
-          print(test)
-          if "1" in test:
-            print("hello")
-          else:
-            print("bye")
-        shell: python
-      - name: npm-version
-        run: |
-          npm -v
-          node -v
-          npm install sfdx-cli --global
-          npm install @salesforce/cli --global
-          sfdx -v
-      
+      - name: simples js action
+      id: greet
+      uses: actions/hello-world-javascript-action@master
+      with:
+        who-to-greet: emily
+      name: logando
+      run: echo "{{ steps.greet.outputs.time }}"
