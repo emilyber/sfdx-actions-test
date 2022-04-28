@@ -7,7 +7,6 @@ jobs:
     steps:
       - name: variáveis de ambiente do github
         run: |
-        echo $GITHUB_ACTION_PATH
         echo $GITHUB_ACTOR
         echo $GITHUB_REPOSITORY
       - name: simples js action
