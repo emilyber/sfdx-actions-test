@@ -2,7 +2,7 @@ name: actions-example
 # on: [push]
 on: 
   push:
-  pull-request:
+  pull_request:
     types: [closed, opened, reopened]
 
 jobs:
