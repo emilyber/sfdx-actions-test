@@ -7,8 +7,9 @@ jobs:
     steps:
       - name: variáveis de ambiente do github
         run: |
-        echo $GITHUB_ACTOR
-        echo $GITHUB_REPOSITORY
+          echo $GITHUB_ACTION_PATH
+          echo $GITHUB_ACTOR
+          echo $GITHUB_REPOSITORY
       - name: simples js action
         id: greet
         uses: actions/hello-world-javascript-action@v1
