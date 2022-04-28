@@ -1,5 +1,9 @@
 name: actions-example
-on: [push]
+# on: [push]
+on: 
+  push:
+  pull-request:
+    types: [closed, opened, reopened]
 
 jobs:
   run-github-actions:
