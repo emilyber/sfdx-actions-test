@@ -21,4 +21,8 @@ jobs:
           npm install sfdx-cli --global
           npm install @salesforce/cli --global
           sfdx -v
+      - name: connected app
+        run: |
+          sfdx auth:jwt:grant --clientid 3MVG9dZJodJWITSsG.BrFRTEjksR1pjSwekGx1.Mnqx.t8XPdk4wvPbCoJyXAsJwlIHoRuEiWxcr0JVMpDPJz --jwtkeyfile /Users/emily/Documents/ssl/server.key --username emily.berteloni@companyteste1.com --instanceurl https://testeemily1-dev-ed.my.salesforce.com
+        shell: sfdx
       
