@@ -21,8 +21,12 @@ jobs:
           npm install sfdx-cli --global
           npm install @salesforce/cli --global
           sfdx -v
-      - name: connected app
+      - name: connected app - DECRYPTED
+        run: openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out server.key -base64 -K ${{secrets.DECRYPTION_KEY}} -iv ${{secrets.DECRYPTION_IV}}
+      - name: connected app - authorize
         run: |
-          sfdx auth:jwt:grant --clientid 3MVG9dZJodJWITSsG.BrFRTEjksR1pjSwekGx1.Mnqx.t8XPdk4wvPbCoJyXAsJwlIHoRuEiWxcr0JVMpDPJz -- ssl/server.key --username emily.berteloni@companyteste1.com --instanceurl https://testeemily1-dev-ed.my.salesforce.com
-        shell: sh
+        echo username value ${{ secrets.USERNAME_STAGING }}
+        sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMER_KEY }} --username=${{ secrets.USERNAME }} --jwtkeyfile server.key --instanceurl https://testeemily1-dev-ed.my.salesforce.com
+
+        
       
