@@ -26,12 +26,12 @@ jobs:
           echo "STEP_ENV : ${{STEP_ENV}}"
   outro-job:
     runs-on: ubuntu-latest
-      steps:
-        - name: variáveis do github + as que criei
-        run: |
-          echo "WF_ENV : ${{WF_ENV}}"
-          echo "JOB_ENV : ${{JOB_ENV}}"
-          echo "STEP_ENV : ${{STEP_ENV}}"
-          echo "home ${{ HOME }}"
-          echo "REPOSITORIO ${{ GITHUB_REPOSITORY }}"
-          echo "ACTOR ${{ GITHUB_ACTOR }}"
+    steps:
+      - name: variáveis do github + as que criei
+      run: |
+        echo "WF_ENV : ${{WF_ENV}}"
+        echo "JOB_ENV : ${{JOB_ENV}}"
+        echo "STEP_ENV : ${{STEP_ENV}}"
+        echo "home ${{ HOME }}"
+        echo "REPOSITORIO ${{ GITHUB_REPOSITORY }}"
+        echo "ACTOR ${{ GITHUB_ACTOR }}"
