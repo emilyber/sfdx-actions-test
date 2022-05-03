@@ -12,6 +12,9 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: paylod via postman pegando a env
+        run: |
+          echo ${{ github.event.client_payload.env}}
       - name: variáveis de ambiente do github
         run: |
           echo $GITHUB_ACTION_PATH
