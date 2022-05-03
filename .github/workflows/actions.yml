@@ -1,10 +1,13 @@
 name: actions-example
 # on: [push]
 on: 
-  push:
+  repository_dispatch:
+    types: [build]
+  # push:
   pull_request:
     types: [closed, opened, reopened]
-
+  #schedule:
+  #  -cron: "* * * * *"
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
