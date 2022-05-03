@@ -9,10 +9,10 @@ jobs:
     env:
       JOB_ENV: para quando precisar de uma env somente para este job
     steps:
-      - name: mostrando a env principla
+      - name: mostrando a env principal
         run: |
-        echo "WF_ENV : ${{WF_ENV}}"
-      -name: criando uma env local e mostrando a principal
+          echo "WF_ENV : ${{WF_ENV}}"
+      - name: criando uma env local e mostrando a principal
         env:
           STEP_ENV: env dentro do step
         run: |
@@ -27,7 +27,7 @@ jobs:
   outro-job:
     runs-on: ubuntu-latest
       steps:
-        name: variáveis do github + as que criei
+        - name: variáveis do github + as que criei
         run: |
           echo "WF_ENV : ${{WF_ENV}}"
           echo "JOB_ENV : ${{JOB_ENV}}"
