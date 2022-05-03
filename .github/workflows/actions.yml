@@ -4,6 +4,9 @@ on:
   repository_dispatch:
     types: [build]
   # push:
+    # branchs:
+    #  - main
+    #  -'!develop'
   pull_request:
     types: [closed, opened, reopened]
   #schedule:
