@@ -1,5 +1,5 @@
 name: usando-token-github
-on: [pull-request]
+on: pull-request
 
 jobs:
   github-token-insert-data:
