@@ -1,4 +1,4 @@
-name: first-action
+name: first-comands shell
 on: [push]
 jobs:
   runs-shell-commands:
@@ -38,7 +38,7 @@ jobs:
         run: |
           sfdx force:project:create --projectname mywork --template standard
           cd mywork
-          sfdx force:source:retrieve -m calculatorServices -u ${{secrets.USERNAME}}
+          sfdx force:source:retrieve -m case -u ${{secrets.USERNAME}}
           ls -l
 
         
