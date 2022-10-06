@@ -37,6 +37,7 @@ jobs:
       - name: retrieve metadata - precisa rodar dentro de um projeto DX
         run: |
           sfdx force:project:create --projectname mywork --template standard
+          cd mywork
           sfdx force:source:retrieve -m calculatorServices -u ${{secrets.USERNAME}}
           ls -l
 
