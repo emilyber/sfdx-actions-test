@@ -34,10 +34,10 @@ jobs:
         run: |
           echo username value ${{ secrets.USERNAME_STAGING }}
           sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMER_KEY }} --username=${{ secrets.USERNAME }} --jwtkeyfile server.key --instanceurl https://testeemily1-dev-ed.my.salesforce.com
-      # - name: retrieve metadata - precisa rodar dentro de um projeto DX
-        # run: |
-        #   sfdx force:source:retrieve -m calculatorServices -u ${{secrets.USERNAME}}
-        #   ls -l
+      - name: retrieve metadata - precisa rodar dentro de um projeto DX
+        run: |
+          sfdx force:source:retrieve -m calculatorServices -u ${{secrets.USERNAME}}
+          ls -l
 
         
       
