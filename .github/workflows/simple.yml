@@ -37,7 +37,8 @@ jobs:
       - name: retrieve metadata - precisa rodar dentro de um projeto DX
         run: |
           sfdx force:project:create --projectname mywork --template standard
-          cd mywork
+          pwd
+          cd /mywork
           sfdx force:source:retrieve -m case -u ${{secrets.USERNAME}}
           ls -l
 
