@@ -40,7 +40,8 @@ jobs:
           pwd
           ls -a
           cd mywork
-          sfdx force:source:retrieve -m case -u ${{secrets.USERNAME}}
+          ls -a
+          sfdx force:source:retrieve -m Case -u ${{secrets.USERNAME}}
           ls -a
 
         
