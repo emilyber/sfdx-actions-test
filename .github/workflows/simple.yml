@@ -39,10 +39,12 @@ jobs:
           sfdx force:project:create --projectname mywork --template standard
           pwd
           ls -a
-          cd mywork
+          cd mywork/force-app
           ls -a
-          sfdx force:source:retrieve -m Case -u ${{secrets.USERNAME}}
-          ls -a
+          # sfdx force:source:retrieve -m Case -u ${{secrets.USERNAME}}
+          # ls -a
+          # steps:
+
 
         
       

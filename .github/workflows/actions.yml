@@ -1,8 +1,8 @@
 name: actions-example
 # on: [push]
 on: 
-  repository_dispatch:
-    types: [build]
+  issue_comment:
+    types: [edited]
   # push:
     # branchs:
     #  - main
@@ -30,3 +30,8 @@ jobs:
           who-to-greet: emily
       - name: logando
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: Dump GitHub context
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        
