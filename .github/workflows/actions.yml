@@ -4,7 +4,6 @@ on:
   pull_request_review_comment:
     types: [edited,dismissed,submitted]
   # push:
-
     # branchs:
     #  - main
     #  -'!develop'
