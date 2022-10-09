@@ -2,9 +2,9 @@ name: actions-example
 
 on:
   issue_comment:
-    types: [edited]
+    types: [created]
   # push:
-  
+
     # branchs:
     #  - main
     #  -'!develop'
