@@ -11,8 +11,8 @@ jobs:
           echo "pasta atual"
           pwd
           ls -a
-          echo "criando um novo repo no git - git init"
-          git init
+          # echo "criando um novo repo no git - git init"
+          # git init
           # echo "logando no nosso repositorio via token para executar no servidor os comandos do git"
           # git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
           # echo "inserindo um responsável pelo commit novo do arquivo gerado aleatoriamente"
