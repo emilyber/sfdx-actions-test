@@ -33,8 +33,7 @@ jobs:
       - name: Dump GitHub context
         run: echo "$GITHUB_CONTEXT"
         env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-      - name: get context values
-        run: echo "${{ github.event }}"
+          GITHUB_CONTEXT: ${{ toJSON(github.event) }}
+
 
         
