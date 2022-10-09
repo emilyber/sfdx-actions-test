@@ -1,8 +1,8 @@
 name: actions-example
 
 on:
-  issue_comment:
-    types: [created, deleted]
+  pull_request:
+    types: [edited]
   # push:
     # branchs:
     #  - main
