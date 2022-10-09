@@ -34,9 +34,9 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJSON(github.event.pull_request.body) }}
+      - name: pacotes
         env:
           PACOTES: ${{ toJSON(github.event.pull_request.body) }}
-      - name: pacotes
         run: echo $PACOTES
 
 
