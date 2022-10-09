@@ -1,8 +1,8 @@
 name: actions-example
 # on: [push]
 on: 
-  issue_comment:
-    types: [edited]
+  pull_request_review:
+    types: [edited,dismissed,submitted]
   # push:
     # branchs:
     #  - main
