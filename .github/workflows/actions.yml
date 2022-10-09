@@ -1,14 +1,23 @@
 name: actions-example
 # on: [push]
 on: 
-  push:
-  pull_request:
-    types: [closed, opened, reopened]
-
+  pull_request_review:
+    types: [edited,dismissed,submitted]
+  # push:
+    # branchs:
+    #  - main
+    #  -'!develop'
+  # pull_request:
+  #   types: [closed, opened, reopened]
+  #schedule:
+  #  -cron: "* * * * *"
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: paylod via postman pegando a env
+        run: |
+          echo ${{ github.event.client_payload.env}}
       - name: variáveis de ambiente do github
         run: |
           echo $GITHUB_ACTION_PATH
@@ -21,3 +30,8 @@ jobs:
           who-to-greet: emily
       - name: logando
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: Dump GitHub context
+        run: echo "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        

@@ -1,4 +1,4 @@
-name: first-action
+name: first-comands shell
 on: [push]
 jobs:
   runs-shell-commands:
@@ -21,4 +21,30 @@ jobs:
           npm install sfdx-cli --global
           npm install @salesforce/cli --global
           sfdx -v
+      - name: chekout - para ler o repo atual
+        uses: actions/checkout@v1
+      - name: List files - pra ver se clona mesmo na maquina local
+        run: |
+          pwd
+          ls
+      - name: connected app - DECRYPTED
+        run: |
+          openssl enc -nosalt -aes-256-cbc -d -in assets/server.key.enc -out server.key -base64 -K ${{secrets.DECRYPTION_KEY}} -iv ${{secrets.DECRYPTION_IV}}
+      - name: connected app - authorize2
+        run: |
+          echo username value ${{ secrets.USERNAME_STAGING }}
+          sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMER_KEY }} --username=${{ secrets.USERNAME }} --jwtkeyfile server.key --instanceurl https://testeemily1-dev-ed.my.salesforce.com
+      - name: retrieve metadata - precisa rodar dentro de um projeto DX
+        run: |
+          sfdx force:project:create --projectname mywork --template standard
+          pwd
+          ls -a
+          cd mywork/force-app
+          ls -a
+          # sfdx force:source:retrieve -m Case -u ${{secrets.USERNAME}}
+          # ls -a
+          # steps:
+
+
+        
       
