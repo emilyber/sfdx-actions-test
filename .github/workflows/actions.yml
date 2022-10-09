@@ -1,5 +1,5 @@
 name: actions-example
-# on: [push]
+on: [push]
 on: 
   issue_comment:
     types: [created,edited,deleted]
