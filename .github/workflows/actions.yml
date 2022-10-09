@@ -1,14 +1,14 @@
 name: actions-example
 # on: [push]
 on: 
-  issue_comment:
+  pull_request_comment:
     types: [edited]
   # push:
     # branchs:
     #  - main
     #  -'!develop'
-  pull_request:
-    types: [closed, opened, reopened]
+  # pull_request:
+  #   types: [closed, opened, reopened]
   #schedule:
   #  -cron: "* * * * *"
 jobs:
