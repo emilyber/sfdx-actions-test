@@ -1,7 +1,7 @@
 name: actions-example
 # on: [push]
 on: 
-  pull_request_review:
+  pull_request_review_comment:
     types: [edited,dismissed,submitted]
   # push:
     # branchs:
