@@ -34,4 +34,6 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$github.event.body"
+
         
