@@ -2,7 +2,7 @@ name: actions-example
 
 on:
   issue_comment:
-    types: [created, deleted]
+    types: [edited, created, deleted]
   # push:
     # branchs:
     #  - main
