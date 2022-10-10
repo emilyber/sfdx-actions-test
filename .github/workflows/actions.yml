@@ -39,8 +39,8 @@ jobs:
           COMENTARIO: ${{ toJSON(github.event.pull_request.body) }}
         run: |
             echo "COMENTARIOS -> $COMENTARIO"
-            pacotes=read $COMENTARIO -d "="
-            echo "pacotes -> $pacotes"
+            read $COMENTARIO -d "=" pacotes
+            
 
 
         
