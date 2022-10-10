@@ -39,24 +39,24 @@ jobs:
           COMENTARIO: ${{ toJSON(github.event.pull_request.body) }}
         run: |
             echo "$COMENTARIO" | while read LINE; do
-              echo "LINE = $LINE"
+                echo "LINE = $LINE"
 
-              if [[ "$LINE" =~ ^pacotes[[:space:]]*=(.*)$ ]]; then
-                  readarray -d "," -t PACKAGES <<< ${BASH_REMATCH[1]}
-                  for PACKAGE in "${PACKAGES[@]}"; do
-                      PACKAGE_WITHOUT_SPACES=$(echo $PACKAGE | xargs)
-                      echo "package = \"$PACKAGE_WITHOUT_SPACES\""
-                  done;
-              elif [[ "$LINE" =~ ^testes[[:space:]]*=(.*)$ ]]; then
-                  CAPTURED_VALUE=${BASH_REMATCH[1]}
-                  readarray -d "," -t TESTS <<< ${BASH_REMATCH[1]}
-                  for TEST in "${TESTS[@]}"; do
-                      TEST_WITHOUT_SPACES=$(echo $TEST | xargs)
-                      echo "test = \"$TEST_WITHOUT_SPACES\""
-                  done;
-              fi
-          done
-            
+                if [[ "$LINE" =~ ^pacotes[[:space:]]*=(.*)$ ]]; then
+                    readarray -d "," -t PACKAGES <<< ${BASH_REMATCH[1]}
+                    for PACKAGE in "${PACKAGES[@]}"; do
+                        PACKAGE_WITHOUT_SPACES=$(echo $PACKAGE | xargs)
+                        echo "package = \"$PACKAGE_WITHOUT_SPACES\""
+                    done;
+                elif [[ "$LINE" =~ ^testes[[:space:]]*=(.*)$ ]]; then
+                    CAPTURED_VALUE=${BASH_REMATCH[1]}
+                    readarray -d "," -t TESTS <<< ${BASH_REMATCH[1]}
+                    for TEST in "${TESTS[@]}"; do
+                        TEST_WITHOUT_SPACES=$(echo $TEST | xargs)
+                        echo "test = \"$TEST_WITHOUT_SPACES\""
+                    done;
+                fi
+            done;
+              
 
 
         
