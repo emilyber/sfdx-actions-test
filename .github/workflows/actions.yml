@@ -38,13 +38,7 @@ jobs:
         env:
           COMENTARIO: ${{ github.event.pull_request.body }}
         run: |
-            echo "COMENTARIO -> $COMENTARIO"
-
             readarray -t LINES <<< "$COMENTARIO"
-
-            echo "COMENTARIO -> $COMENTARIO"
-
-            echo "LINES -> $LINES"
 
             for LINE in "${LINES[@]}"; do  
                 echo "LINE -> $LINE"
