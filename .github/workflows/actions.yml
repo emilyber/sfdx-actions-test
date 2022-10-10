@@ -38,8 +38,11 @@ jobs:
         env:
           COMENTARIO: ${{ toJSON(github.event.pull_request.body) }}
         run: |
+            echo "COMENTARIO -> $COMENTARIO"
+
             readarray -t LINES <<< "$COMENTARIO"
-  
+            echo "COMENTARIO -> $COMENTARIO"
+            
             for LINE in "${LINES[@]}"; do  
                 if [[ "$LINE" =~ ^pacotes[[:space:]]*=(.*)$ ]]; then
                     readarray -d "," -t PACKAGES <<< ${BASH_REMATCH[1]}
