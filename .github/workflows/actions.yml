@@ -40,9 +40,12 @@ jobs:
         run: |
             echo "COMENTARIO -> $COMENTARIO"
 
-            readarray -t LINES <<< "$COMENTARIO"
+            readarray -d "\r\n" -t LINES <<< "$COMENTARIO"
+
             echo "COMENTARIO -> $COMENTARIO"
-            echo "LINEs -> $LINES"
+
+            echo "LINES -> $LINES"
+
             for LINE in "${LINES[@]}"; do  
                 echo "LINE -> $LINE"
                 if [[ "$LINE" =~ ^pacotes[[:space:]]*=(.*)$ ]]; then
