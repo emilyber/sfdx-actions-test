@@ -42,7 +42,7 @@ jobs:
 
             echo "COMENTARIO -> $COMENTARIO"
 
-            readarray -t LINES <<< "$COMENTARIO"
+            readarray -d '\n' -t LINES <<< "$COMENTARIO"
 
             echo "COMENTARIO -> $COMENTARIO"
 
@@ -50,7 +50,7 @@ jobs:
 
             for LINE in "${LINES[@]}"; do  
                 echo "LINE -> $LINE"
-                
+
                 if [[ "$LINE" =~ ^pacotes[[:space:]]*=(.*)$ ]]; then
                     readarray -d "," -t PACKAGES <<< ${BASH_REMATCH[1]}
                     for PACKAGE in "${PACKAGES[@]}"; do
