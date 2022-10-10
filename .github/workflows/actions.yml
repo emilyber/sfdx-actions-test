@@ -37,7 +37,7 @@ jobs:
       - name: pacotes
         env:
           PACOTES: ${{ toJSON(github.event.pull_request.body) }}
-        run: echo $PACOTES
+        run: echo "lista de pacotes -> $PACOTES"
 
 
         
