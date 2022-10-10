@@ -42,7 +42,7 @@ jobs:
 
             echo "COMENTARIO -> $COMENTARIO"
 
-            readarray -d '\\r\\n' -t LINES <<< "$COMENTARIO"
+            readarray -d '\r\n' -t LINES <<< "$COMENTARIO"
 
             echo "COMENTARIO -> $COMENTARIO"
 
