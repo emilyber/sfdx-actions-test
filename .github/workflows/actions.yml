@@ -37,7 +37,10 @@ jobs:
       - name: pacotes
         env:
           PACOTES: ${{ toJSON(github.event.pull_request.body) }}
-        run: echo "lista de pacotes -> $PACOTES"
+        run: |
+            echo "COMENTARIOS -> $COMENTARIO"
+            pacotes=read $COMENTARIO -d "="
+            echo "pacotes -> $pacotes"
 
 
         
