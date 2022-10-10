@@ -39,10 +39,10 @@ jobs:
           COMENTARIO: ${{ toJSON(github.event.pull_request.body) }}
         run: |
             echo "SHELL = $SHELL"
-            
+
             echo "COMENTARIO -> $COMENTARIO"
 
-            readarray -d "\\r\\n" -t LINES <<< "$COMENTARIO"
+            readarray -d '\r\n' -t LINES <<< "$COMENTARIO"
 
             echo "COMENTARIO -> $COMENTARIO"
 
