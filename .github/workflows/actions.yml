@@ -38,9 +38,7 @@ jobs:
         env:
           COMENTARIO: ${{ toJSON(github.event.pull_request.body) }}
         run: |
-            echo "COMENTARIOS -> $COMENTARIO"
-            read -d '=' $COMENTARIO var
-            echo $var
+            IFS=$'\n' read -d '' -r -a $COMENTARIO << pacotes
             
 
 
