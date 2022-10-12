@@ -34,7 +34,7 @@ jobs:
         run: |
           echo username value ${{ secrets.USERNAME_STAGING }}
           sfdx force:auth:jwt:grant --clientid=${{ secrets.CONSUMER_KEY }} --username=${{ secrets.USERNAME }} --jwtkeyfile server.key --instanceurl https://testeemily1-dev-ed.my.salesforce.com
-          sfdx force:package:installed:list --username=${{ secrets.USERNAME }} --json
+          sfdx force:package:installed:list -u ${{ secrets.USERNAME }} --json
 
       - name: retrieve metadata - precisa rodar dentro de um projeto DX
         run: |
