@@ -17,7 +17,8 @@ jobs:
     steps:
       - name: paylod via postman pegando a env
         run: |
-          DEPENDENCIES="echo python -c 'import json;"
+          DEPENDENCIES="echo python -c 'import json;'"
+          echo "DEPENDENCIES: $DEPENDENCIES"
           echo ${{ github.event.client_payload.env}}
       - name: variáveis de ambiente do github
         run: |
