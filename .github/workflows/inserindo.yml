@@ -2,13 +2,12 @@ name: usando-token-github
 on: [ push ]
 
 jobs:
-  github-token-insert-data:
+  github-testes-migracao-pipeline:
     runs-on: ubuntu-latest
     
     steps:
       - name: criando arquivo autenticado via token
         run: |
-          echo "pasta atual"
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
           start_date="2022-10-29 01:00:00"
