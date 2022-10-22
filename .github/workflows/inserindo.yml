@@ -1,4 +1,4 @@
-name: usando-token-github
+name: testes-migracao-pipeline
 on: [ push ]
 
 jobs:
