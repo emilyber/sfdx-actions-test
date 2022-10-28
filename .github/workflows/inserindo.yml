@@ -1,6 +1,6 @@
 name: testes-migracao-pipeline
-on: [ push ]
-
+on:
+  workflow_dispatch:
 jobs:
   github-testes-migracao-pipeline:
     runs-on: ubuntu-latest
