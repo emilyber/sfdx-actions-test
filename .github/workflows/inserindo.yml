@@ -1,6 +1,6 @@
 name: testes-migracao-pipeline
 on:
-  workflow_dispatch:
+  workflow_call:
 jobs:
   github-testes-migracao-pipeline:
     runs-on: ubuntu-latest
