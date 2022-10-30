@@ -1,5 +1,6 @@
 name: first-comands shell
-on: [push]
+on:
+  workflow_call:
 jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
