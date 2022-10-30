@@ -1,7 +1,10 @@
 name: testes-migracao-pipeline
 on:
   workflow_call:
+<<<<<<< HEAD
 
+=======
+>>>>>>> 888df34665261f5efaf81e4c8aa97a4b08cd5bcd
 jobs:
   github-testes-migracao-pipeline:
     runs-on: ubuntu-latest
