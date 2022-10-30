@@ -1,5 +1,6 @@
 name: analisando-variaveis
-on: [push]
+on:
+  workflow_call:
 env:
   WF_ENV: disponivel pra TODO MUNDO
 

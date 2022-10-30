@@ -1,5 +1,6 @@
 name: testes-migracao-pipeline
-on: [ push ]
+on:
+  workflow_call:
 
 jobs:
   github-testes-migracao-pipeline:
@@ -32,4 +33,9 @@ jobs:
 
           echo -e "\n#### Sua Gmud dará inicio em: ####"
           eval "echo $(date -ud "@$sleep_seconds" +'$((%s/3600/24)) days %H hours %M minutes %S seconds')"
+
+          echo -e "\n #### validando se bate o tempo- lembrando do gmt-3 ####"
+          date_hour=$(($sleep_seconds + $current_epoch))
+          teste=$(date -d "@$date_hour" )
+          echo $teste
 
