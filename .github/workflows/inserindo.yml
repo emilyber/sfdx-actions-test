@@ -31,19 +31,6 @@ jobs:
           echo "sleep_seconds --> $sleep_seconds"
           echo "sleep_gmud=$sleep_seconds" >> $GITHUB_ENV
 
-          echo -e "\n#### Sua Gmud dará inicio em: ####"
-          eval "echo $(date -ud "@$sleep_seconds" +'$((%s/3600/24)) days %H hours %M minutes %S seconds')"
-
-          echo -e "\n #### validando se bate o tempo- lembrando do gmt-3 ####"
-          date_hour=$(($sleep_seconds + $current_epoch))
-          teste=$(date -d "@$date_hour" )
-          echo $teste
-
-
-  sleep-pipeline:
-    runs-on: ubuntu-latest
-    needs: github-testes-migracao-pipeline
-    steps:
       - name: Sleep time
         run: |
           echo " ${{ env.sleep_gmud }}"
