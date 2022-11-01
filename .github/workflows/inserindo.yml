@@ -32,6 +32,7 @@ jobs:
           echo "sleep_gmud=$sleep_seconds" >> $GITHUB_ENV
 
       - name: Sleep time
+        continue-on-error: true
         run: |
           echo " ${{ env.sleep_gmud }}"
           if [[ ${{ env.sleep_gmud }} -gt 0 ]]; then
