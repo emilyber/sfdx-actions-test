@@ -10,7 +10,7 @@ jobs:
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          start_date="2022-10-29 01:00:00"
+          start_date="2022-11-07 01:00:00"
           echo -e "Data da mudança na gmud: $start_date"
 
           convert_to_date=$(date -d "$start_date")
@@ -37,4 +37,6 @@ jobs:
           date_hour=$(($sleep_seconds + $current_epoch))
           teste=$(date -d "@$date_hour" )
           echo $teste
+
+          sleep $sleep_seconds
 
