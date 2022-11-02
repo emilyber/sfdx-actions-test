@@ -11,7 +11,7 @@ jobs:
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          start_date="2022-11-03 00:00:00"
+          start_date="2022-11-03 07:00:00"
           echo -e "Data da mudança na gmud: $start_date"
 
           convert_to_date=$(date -d "$start_date")
@@ -31,10 +31,10 @@ jobs:
           sleep_seconds=$(($convert_seconds_start_date - $current_epoch))
           echo "sleep_seconds --> $sleep_seconds"
           echo "sleep_gmud=$sleep_seconds" >> $GITHUB_ENV
-           if [[ sleep_seconds -gt 3600 ]]; then
-             echo "maior que 3600"
+           if [[ sleep_seconds -gt 18000 ]]; then
+             echo "maior que 18000 - logo mais que 5 horas"
            else
-              echo "menor que 3600"
+              echo "menor que 18000"
            fi
 
       - name: Sleep time
@@ -43,8 +43,8 @@ jobs:
         run: |
           echo " ${{ env.sleep_gmud }} 10 horas são 36000 segundos"
           if [[ ${{ env.sleep_gmud }} -gt 0 ]]; then
-              if [[ ${{ env.sleep_gmud }} -gt 3600 ]]; then
-                 sleep 3600 & wait $!
+              if [[ ${{ env.sleep_gmud }} -gt 18000 ]]; then
+                 sleep 18000 & wait $!
                  echo "test=continue" >> $GITHUB_OUTPUT
               else
                 sleep ${{ env.sleep_gmud }} & wait $!
@@ -71,7 +71,7 @@ jobs:
           echo -e  "${{needs.github-testes-migracao-pipeline.outputs.output1}}"
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          start_date="2022-11-03 00:00:00"
+          start_date="2022-11-03 07:00:00"
           echo -e "Data da mudança na gmud: $start_date"
 
           convert_to_date=$(date -d "$start_date")
