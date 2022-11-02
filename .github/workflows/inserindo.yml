@@ -11,32 +11,30 @@ jobs:
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          # start_date="2022-11-03 17:00:00"
-          # echo -e "Data da mudança na gmud: $start_date"
+          start_date="2022-11-03 17:00:00"
+          echo -e "Data da mudança na gmud: $start_date"
 
-          # convert_to_date=$(date -d "$start_date")
-          # echo -e "convert_to_date --> $convert_to_date"
+          convert_to_date=$(date -d "$start_date")
+          echo -e "convert_to_date --> $convert_to_date"
 
-          # brasilian_time="$(TZ=America/Sao_Paulo date -d "$convert_to_date" +'%m/%d/%Y %H:%M')"
-          # echo -e "brasilian_time --> $brasilian_time"
+          brasilian_time="$(TZ=America/Sao_Paulo date -d "$convert_to_date" +'%m/%d/%Y %H:%M')"
+          echo -e "brasilian_time --> $brasilian_time"
 
-          # echo -e "\n#### get seconds ####"
-          # convert_seconds_start_date=$(date -d "$brasilian_time" +%s)
-          # echo -e "convert_seconds_start_date --> $convert_seconds_start_date"
+          echo -e "\n#### get seconds ####"
+          convert_seconds_start_date=$(date -d "$brasilian_time" +%s)
+          echo -e "convert_seconds_start_date --> $convert_seconds_start_date"
 
-          # echo -e "\n#### sleep ####"
-          # export TZ=America/Sao_Paulo
-          # date
-          # current_epoch=$(date +%s)
-          # sleep_seconds=$(($convert_seconds_start_date - $current_epoch))
-
-          sleep_seconds=5400
+          echo -e "\n#### sleep ####"
+          export TZ=America/Sao_Paulo
+          date
+          current_epoch=$(date +%s)
+          sleep_seconds=$(($convert_seconds_start_date - $current_epoch))
           echo "sleep_seconds --> $sleep_seconds"
           echo "sleep_gmud=$sleep_seconds" >> $GITHUB_ENV
-           if [[ sleep_seconds -gt 18000 ]]; then
-             echo "maior que 18000"
+           if [[ sleep_seconds -gt 3600 ]]; then
+             echo "maior que 3600"
            else
-              echo "menor que 1800"
+              echo "menor que 3600"
            fi
 
       - name: Sleep time
@@ -73,27 +71,25 @@ jobs:
           echo -e  "${{needs.github-testes-migracao-pipeline.outputs.output1}}"
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          # start_date="2022-11-03 22:30:00"
-          # echo -e "Data da mudança na gmud: $start_date"
+          start_date="2022-11-03 17:00:00"
+          echo -e "Data da mudança na gmud: $start_date"
 
-          # convert_to_date=$(date -d "$start_date")
-          # echo -e "convert_to_date --> $convert_to_date"
+          convert_to_date=$(date -d "$start_date")
+          echo -e "convert_to_date --> $convert_to_date"
 
-          # brasilian_time="$(TZ=America/Sao_Paulo date -d "$convert_to_date" +'%m/%d/%Y %H:%M')"
-          # echo -e "brasilian_time --> $brasilian_time"
+          brasilian_time="$(TZ=America/Sao_Paulo date -d "$convert_to_date" +'%m/%d/%Y %H:%M')"
+          echo -e "brasilian_time --> $brasilian_time"
 
-          # echo -e "\n#### get seconds ####"
-          # convert_seconds_start_date=$(date -d "$brasilian_time" +%s)
-          # echo -e "convert_seconds_start_date --> $convert_seconds_start_date"
+          echo -e "\n#### get seconds ####"
+          convert_seconds_start_date=$(date -d "$brasilian_time" +%s)
+          echo -e "convert_seconds_start_date --> $convert_seconds_start_date"
 
-          # echo -e "\n#### sleep ####"
-          # export TZ=America/Sao_Paulo
-          # date
-          # current_epoch=$(date +%s)
-          # sleep_seconds=$(($convert_seconds_start_date - $current_epoch))
-          # echo "sleep_seconds --> $sleep_seconds"
-          
-          sleep_seconds=5400
+          echo -e "\n#### sleep ####"
+          export TZ=America/Sao_Paulo
+          date
+          current_epoch=$(date +%s)
+          sleep_seconds=$(($convert_seconds_start_date - $current_epoch))
+          echo "sleep_seconds --> $sleep_seconds"
           echo "sleep_gmud=$sleep_seconds" >> $GITHUB_ENV
 
       - name: Sleep time2
