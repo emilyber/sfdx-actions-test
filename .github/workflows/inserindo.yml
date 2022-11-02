@@ -11,7 +11,7 @@ jobs:
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          start_date="2022-11-02 21:00:00"
+          start_date="2022-11-02 18:00:00"
           echo -e "Data da mudança na gmud: $start_date"
 
           convert_to_date=$(date -d "$start_date")
@@ -63,9 +63,10 @@ jobs:
     steps:
       - name: Alterando timestamp gmud e efetuando sleep
         run: |
+          echo -e  "${{needs.job1.outputs.output1}}"
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          start_date="2022-11-02 21:00:00"
+          start_date="2022-11-02 18:00:00"
           echo -e "Data da mudança na gmud: $start_date"
 
           convert_to_date=$(date -d "$start_date")
