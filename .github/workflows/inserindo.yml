@@ -45,6 +45,8 @@ jobs:
                 sleep ${{ env.sleep_gmud }} & wait $!
                 echo "test=ended" >> $GITHUB_OUTPUT
               fi
+          else
+            echo "test=ended" >> $GITHUB_OUTPUT 
           fi
           
           # if [[ ${{ env.sleep_gmud }} -gt 0 ]]; then
@@ -63,7 +65,7 @@ jobs:
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          start_date="2022-11-04 01:00:00"
+          start_date="2022-11-02 02:00:00"
           echo -e "Data da mudança na gmud: $start_date"
 
           convert_to_date=$(date -d "$start_date")
