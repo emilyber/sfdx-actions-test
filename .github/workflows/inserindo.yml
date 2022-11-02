@@ -4,12 +4,10 @@ on:
 jobs:
   github-testes-migracao-pipeline:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
     steps:
       - name: Alterando timestamp gmud e efetuando sleep
-        uses: nick-fields/retry@v2
-        with:
-          timeout_minutes: 300
-          max_attempts: 3
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
@@ -34,6 +32,62 @@ jobs:
           echo "sleep_seconds --> $sleep_seconds"
           echo "sleep_gmud=$sleep_seconds" >> $GITHUB_ENV
 
+      - name: Sleep time
+        continue-on-error: true
+        id: test
+        run: |
+          echo " ${{ env.sleep_gmud }} 10 horas são 36000 segundos"
+          if [[ ${{ env.sleep_gmud }} -gt 0 ]]; then
+              if [[ ${{ env.sleep_gmud }} > 18000 ]]; then
+                 sleep 18000 & wait $!
+                 echo "test=continue" >> $GITHUB_OUTPUT
+              else
+                sleep ${{ env.sleep_gmud }} & wait $!
+                echo "test=ended" >> $GITHUB_OUTPUT
+              fi
+          fi
+          
+          # if [[ ${{ env.sleep_gmud }} -gt 0 ]]; then
+          #   echo "info: maior que 0"
+          #   sleep ${{ env.sleep_gmud }} & wait $!
+          #   exit 0
+          # fi
+
+  github-continue-sleep:
+    runs-on: ubuntu-latest
+    needs: 
+      - github-testes-migracao-pipeline
+    if: ${{needs.job1.outputs.output1}} == continue
+    steps:
+      - name: Alterando timestamp gmud e efetuando sleep
+        run: |
+          echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
+
+          start_date="2022-11-04 01:00:00"
+          echo -e "Data da mudança na gmud: $start_date"
+
+          convert_to_date=$(date -d "$start_date")
+          echo -e "convert_to_date --> $convert_to_date"
+
+          brasilian_time="$(TZ=America/Sao_Paulo date -d "$convert_to_date" +'%m/%d/%Y %H:%M')"
+          echo -e "brasilian_time --> $brasilian_time"
+
+          echo -e "\n#### get seconds ####"
+          convert_seconds_start_date=$(date -d "$brasilian_time" +%s)
+          echo -e "convert_seconds_start_date --> $convert_seconds_start_date"
+
+          echo -e "\n#### sleep ####"
+          export TZ=America/Sao_Paulo
+          date
+          current_epoch=$(date +%s)
+          sleep_seconds=$(($convert_seconds_start_date - $current_epoch))
+          echo "sleep_seconds --> $sleep_seconds"
+          echo "sleep_gmud=$sleep_seconds" >> $GITHUB_ENV
+
+      - name: Sleep time2
+        continue-on-error: true
+        id: test2
+        run: |
           echo " ${{ env.sleep_gmud }} 10 horas são 36000 segundos"
           if [[ ${{ env.sleep_gmud }} -gt 0 ]]; then
             echo "info: maior que 0"
@@ -41,4 +95,17 @@ jobs:
             exit 0
           fi
 
-
+  runs-shell-commands:
+    runs-on: ubuntu-latest
+    needs: github-continue-sleep
+    steps:
+      - name: python commands
+        run: |
+          print("Hello World")
+          test = "123"
+          print(test)
+          if "1" in test:
+            print("hello")
+          else:
+            print("bye")
+        shell: python
