@@ -7,8 +7,9 @@ jobs:
     outputs:
       output1: ${{ steps.step1.outputs.test }}
     steps:
-      - id: step1
+
       - name: Alterando timestamp gmud e efetuando sleep
+      - id: step1
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
