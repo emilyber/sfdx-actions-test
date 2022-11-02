@@ -4,13 +4,16 @@ on:
 jobs:
   github-testes-migracao-pipeline:
     runs-on: ubuntu-latest
-    
+    uses: nick-fields/retry@v2
+    with:
+      timeout_minutes: 300
+      max_attempts: 3
     steps:
       - name: Alterando timestamp gmud e efetuando sleep
         run: |
           echo -e "#### Convertendo para TZ America/Sao_Paulo ####";
 
-          start_date="2022-11-03 01:00:00"
+          start_date="2022-11-04 01:00:00"
           echo -e "Data da mudança na gmud: $start_date"
 
           convert_to_date=$(date -d "$start_date")
@@ -34,7 +37,7 @@ jobs:
       - name: Sleep time
         continue-on-error: true
         run: |
-          echo " ${{ env.sleep_gmud }}"
+          echo " ${{ env.sleep_gmud }} 10 horas são 36000 segundos"
           if [[ ${{ env.sleep_gmud }} -gt 0 ]]; then
             echo "info: maior que 0"
             sleep ${{ env.sleep_gmud }} & wait $!
