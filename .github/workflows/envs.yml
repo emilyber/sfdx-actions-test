@@ -2,7 +2,7 @@ name: analisando-variaveis
 on:
   workflow_call:
 env:
-  WF_ENV: disponivel pra TODO MUNDO
+  WF_ENV: coe_key
 
 jobs:
   run-github-envs:
