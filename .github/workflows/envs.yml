@@ -1,6 +1,6 @@
 name: analisando-variaveis
 on:
-  workflow_call:
+  push
 env:
   WF_ENV: coe_key
 
