@@ -1,6 +1,6 @@
 name: create-version
 on:
-  workflow_call:
+  push
 jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
