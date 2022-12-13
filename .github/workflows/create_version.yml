@@ -8,9 +8,9 @@ jobs:
     - name: write without show
       run: |
         echo "antes"
-        echo "escrevendo algo que não pode mostrar" | dd of=test.txt
+        > file1.txt cat <<< "This is a here-string with random"         
         echo "depois"
-        cat test.txt
+        cat file1.txt 
 
     - name: npm-version
       run: |
