@@ -5,6 +5,13 @@ jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
     steps:
+    - name: write without show
+      run: |
+        echo "antes"
+        echo "escrevendo algo que não pode mostrar" | dd of=test.txt
+        echo "depois"
+        cat test.txt
+
     - name: npm-version
       run: |
         npm -v
