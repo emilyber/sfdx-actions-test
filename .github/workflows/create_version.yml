@@ -17,7 +17,7 @@ jobs:
         cat file1.txt 
         gmud=
 
-        echo "GMUD=teste" >> .env
+        echo "GMUD=" >> .env
         cat .env >> $GITHUB_ENV
         cat $GITHUB_ENV
     - name: nao-pega-env-do-mesmo-step
