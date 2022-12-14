@@ -17,11 +17,13 @@ jobs:
         cat file1.txt 
         gmud=gm54545
         if [[ -z $gmud ]]; then
-          echo "only_promote=true" >> GITHUB_OUTPUT
+          echo "gmud vazia"
+          echo "only_promote=true" >> $GITHUB_OUTPUT
         else
-          echo "only_promote=false" >> GITHUB_OUTPUT
+          echo "gmud com valor"
+          echo "only_promote=false" >> $GITHUB_OUTPUT
         fi
-
+        cat GITHUB_OUTPUT
 
   runs-second-job:
     runs-on: ubuntu-latest
