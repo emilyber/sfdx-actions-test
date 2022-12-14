@@ -23,7 +23,7 @@ jobs:
           echo "gmud com valor"
           echo "only_promote=false" >> $GITHUB_OUTPUT
         fi
-
+        cat $GITHUB_OUTPUT
 
   runs-second-job:
     runs-on: ubuntu-latest
