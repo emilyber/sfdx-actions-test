@@ -15,7 +15,7 @@ jobs:
         > file1.txt cat <<< "This is a here-string with random"         
         echo "depois"
         cat file1.txt 
-        gmud=teste
+        gmud=
         if [[ -z $gmud ]]; then
           echo "gmud vazia"
           echo "only_promote=true" >> $GITHUB_OUTPUT
