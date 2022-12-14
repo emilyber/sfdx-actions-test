@@ -6,7 +6,7 @@ jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
     outputs:
-      only_promote: 'false'
+      only_promote: 'true'
     steps:
     - name: write without show
       id: step_pr
