@@ -16,7 +16,7 @@ jobs:
         echo "depois"
         cat file1.txt 
         gmud=
-        if [ -z $gmud ] then
+        if [[ -z $gmud ]]; then
           echo "only_promote=true" >> GITHUB_OUTPUT
         else
           echo "only_promote=false" >> GITHUB_OUTPUT
