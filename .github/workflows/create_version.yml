@@ -28,11 +28,11 @@ jobs:
   mostrando-info:
     runs-on: ubuntu-latest
     needs: [runs-shell-commands]
-     steps:
+    steps:
     - name: printando-saida
       run: |
         echo ${{ needs.runs-shell-commands.outputs.only_promote }}
-        
+
         if [[ ${{ needs.runs-shell-commands.outputs.only_promote }} == 'false' ]]; then
           echo "bate valores"
         else
