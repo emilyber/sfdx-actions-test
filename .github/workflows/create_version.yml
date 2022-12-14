@@ -25,7 +25,7 @@ jobs:
       run: |  
         echo "[DEBUG] ${{ env.GMUD }} "
         # if [[ -z $gmud ]]; then
-        if [[ -z ${{ env.GMUD }} ]]; then
+        if [[ -z "${{ env.GMUD }}" ]]; then
           echo "gmud vazia"
           echo "only_promote=true" >> $GITHUB_OUTPUT
         else
