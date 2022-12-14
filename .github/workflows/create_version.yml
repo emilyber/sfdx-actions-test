@@ -6,7 +6,7 @@ jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
     outputs:
-      only_promote: 'true'
+      only_promote: ${{ steps.step_pr.outputs.only_promote }}
     steps:
     - name: write without show
       id: step_pr
@@ -16,13 +16,13 @@ jobs:
         echo "depois"
         cat file1.txt 
         gmud=teste
-        # if [[ -z $gmud ]]; then
-        #   echo "gmud vazia"
-        #   echo "only_promote='true'" >> $GITHUB_OUTPUT
-        # else
-        #   echo "gmud com valor"
-        #   echo "only_promote='false'" >> $GITHUB_OUTPUT
-        # fi
+        if [[ -z $gmud ]]; then
+          echo "gmud vazia"
+          echo "only_promote=true" >> $GITHUB_OUTPUT
+        else
+          echo "gmud com valor"
+          echo "only_promote=false" >> $GITHUB_OUTPUT
+        fi
         cat $GITHUB_OUTPUT
 
   mostrando-info:
