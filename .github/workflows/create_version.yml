@@ -25,7 +25,8 @@ jobs:
 
   runs-second-job:
     runs-on: ubuntu-latest
-    if: needs.runs-shell-commands.outputs.info_gmud == "true"
+    needs: [runs-shell-commands]
+    if: needs.runs-shell-commands.outputs.info_gmud == 'true'
     steps:
     - name: npm-version
       run: |
