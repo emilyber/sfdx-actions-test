@@ -16,7 +16,13 @@ jobs:
         echo "depois"
         cat file1.txt 
         gmud=
-        if [[ -z $gmud ]]; then
+
+        echo "GMUD=" >> .env
+        cat . env >> GITHUB_ENV
+        
+        echo "[DEBUG] ${{ env.GMUD }}"
+       # if [[ -z $gmud ]]; then
+       if [[ -z ${{ env.GMUD }} ]]; then
           echo "gmud vazia"
           echo "only_promote=true" >> $GITHUB_OUTPUT
         else
