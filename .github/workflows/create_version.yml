@@ -5,14 +5,28 @@ on:
 jobs:
   runs-shell-commands:
     runs-on: ubuntu-latest
+    outputs:
+      info_gmud: ${{ steps.step_pr.outputs.only_promote }}
     steps:
     - name: write without show
+      id: step_pr
       run: |
         echo "antes"
         > file1.txt cat <<< "This is a here-string with random"         
         echo "depois"
         cat file1.txt 
+        gmud=
+        if [ -z $gmud ] then
+          echo "only_promote=true" >> GITHUB_OUTPUT
+        else
+          echo "only_promote=false" >> GITHUB_OUTPUT
+        fi
 
+
+  runs-second-job:
+    runs-on: ubuntu-latest
+    if: needs.runs-shell-commands.outputs.info_gmud == "true"
+    steps:
     - name: npm-version
       run: |
         npm -v
