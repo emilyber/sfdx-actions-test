@@ -26,10 +26,11 @@ jobs:
   runs-second-job:
     runs-on: ubuntu-latest
     needs: [runs-shell-commands]
-    if: needs.runs-shell-commands.outputs.info_gmud == 'true'
+    # if: ${{ needs.runs-shell-commands.outputs.info_gmud }} == 'true'
     steps:
     - name: npm-version
       run: |
+        echo ${{ needs.runs-shell-commands.outputs.info_gmud }}
         npm -v
         node -v
         npm install sfdx-cli --global
