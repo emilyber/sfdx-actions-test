@@ -17,10 +17,10 @@ jobs:
         cat file1.txt 
         gmud=
 
-        echo "GMUD=" >> .env
+        echo "GMUD=teste" >> .env
         cat .env >> $GITHUB_ENV
         cat $GITHUB_ENV
-        
+
         echo "[DEBUG] ${{ env.GMUD }}"
         # if [[ -z $gmud ]]; then
         if [[ -z ${{ env.GMUD }} ]]; then
