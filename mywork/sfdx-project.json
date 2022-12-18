@@ -1,7 +1,7 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
+      "path": "myPkgAlias",
       "default": true,
       "package": "myPkgAlias",
       "versionName": "1.0.0",
@@ -18,7 +18,7 @@
     ]
   },
   {
-      "path": "force-app",
+      "path": "myPkgAlias2",
       "default": true,
       "package": "myPkgAlias2",
       "versionName": "1.0.0",
