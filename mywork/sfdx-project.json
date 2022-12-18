@@ -16,6 +16,23 @@
             "versionNumber": "0.0.1.LATEST"
         }
     ]
+  },
+  {
+      "path": "force-app",
+      "default": true,
+      "package": "myPkgAlias2",
+      "versionName": "1.0.0",
+      "versionNumber": "1.0.0.NEXT",
+      "dependencies": [
+        {
+            "package": "Tutorial",
+            "versionNumber": "0.2.1.LATEST"
+        },
+        {
+            "package": "SIQCloud OAuth",
+            "versionNumber": "0.1.1.LATEST"
+        }
+    ]
   }
   ],
 

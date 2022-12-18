@@ -11,9 +11,24 @@ jobs:
 
     -name: teste leitura de arquivo
       run: |
-          jq '.mywork.packageDirectories[].dependencies'
+        # jq -s '.' < tmp.json
+          jq -s '.mywork.packageDirectories[].dependencies' < list.json
+          cat list.json
+
+        # [
+        #   {
+        #     "package": "Tutorial",
+        #     "versionNumber": "0.2.0.LATEST"
+        #   },
+        #   {
+        #     "package": "SIQCloud OAuth",
+        #     "versionNumber": "0.0.1.LATEST"
+        #   }
+        # ]
+
+
+
     - name: write without show
-      
       run: |
         echo "antes"
         > file1.txt cat <<< "This is a here-string with random"         
