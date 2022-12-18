@@ -8,9 +8,10 @@ jobs:
     outputs:
       only_promote: ${{ steps.step_pr.outputs.only_promote }}
     steps:
+    - name: checkout - para ler o repo atual
+      uses: actions/checkout@v1
 
     - name: teste leitura de arquivo
-      uses: actions/checkout@v1
       run: |
         pwd
         ls
