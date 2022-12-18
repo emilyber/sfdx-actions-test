@@ -9,7 +9,7 @@ jobs:
       only_promote: ${{ steps.step_pr.outputs.only_promote }}
     steps:
 
-    -name: teste leitura de arquivo
+    - name: teste leitura de arquivo
       run: |
         # jq -s '.' < tmp.json
           jq -s '.mywork.packageDirectories[].dependencies' < list.json
