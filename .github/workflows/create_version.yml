@@ -15,7 +15,7 @@ jobs:
       run: |
         pwd
         ls -R .
-        cat mywork/sfdx-project.json | jq '.packageDirectories[].dependencies' > list.json
+        cat mywork/sfdx-project.json | jq '[.packageDirectories[].dependencies[]]' > list.json
         ls -R .
         cat list.json
 
