@@ -10,25 +10,12 @@ jobs:
     steps:
 
     - name: teste leitura de arquivo
+      uses: actions/checkout@v1
       run: |
-          pwd
-          ls
-        # jq -s '.' < tmp.json
-          jq -s '.mywork.packageDirectories[].dependencies' < list.json
-          cat list.json
-
-        # [
-        #   {
-        #     "package": "Tutorial",
-        #     "versionNumber": "0.2.0.LATEST"
-        #   },
-        #   {
-        #     "package": "SIQCloud OAuth",
-        #     "versionNumber": "0.0.1.LATEST"
-        #   }
-        # ]
-
-
+        pwd
+        ls
+        jq -s '.mywork.packageDirectories[].dependencies' < list.json
+        cat list.json
 
     - name: write without show
       run: |
