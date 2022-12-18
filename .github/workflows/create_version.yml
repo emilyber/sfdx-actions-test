@@ -15,7 +15,8 @@ jobs:
       run: |
         pwd
         ls
-        jq -s '.mywork.packageDirectories[].dependencies' < list.json
+        jq -s '.mywork.packageDirectories[].dependencies' > list.json
+        ls
         cat list.json
 
     - name: write without show
