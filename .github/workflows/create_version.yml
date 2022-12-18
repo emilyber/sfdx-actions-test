@@ -15,7 +15,7 @@ jobs:
       run: |
         pwd
         ls
-        jq -s '.mywork.sfdx-project.packageDirectories[].dependencies' > list.json
+        jq -s '.mywork[].sfdx-project.packageDirectories[].dependencies' > list.json
         ls
         cat list.json
 
