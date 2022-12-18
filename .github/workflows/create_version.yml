@@ -8,6 +8,10 @@ jobs:
     outputs:
       only_promote: ${{ steps.step_pr.outputs.only_promote }}
     steps:
+
+    -name: teste leitura de arquivo
+      run: |
+          jq '.mywork.packageDirectories[].dependencies'
     - name: write without show
       
       run: |
