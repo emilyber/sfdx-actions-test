@@ -14,9 +14,7 @@ jobs:
     - name: teste leitura de arquivo
       run: |
         pwd
-        ls -R .
         cat mywork/sfdx-project.json | jq '[.packageDirectories[].dependencies[]]' > list.json
-        ls -R .
         cat list.json
 
     - name: write without show
