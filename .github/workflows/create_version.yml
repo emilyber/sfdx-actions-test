@@ -11,6 +11,7 @@ jobs:
 
     - name: teste leitura de arquivo
       run: |
+          ls -l
         # jq -s '.' < tmp.json
           jq -s '.mywork.packageDirectories[].dependencies' < list.json
           cat list.json
