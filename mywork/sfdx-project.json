@@ -5,8 +5,7 @@
       "default": true,
       "package": "myPkgAlias",
       "versionName": "1.0.0",
-      "versionNumber": "1.0.0.NEXT",
-      "dependencies": [
+      "versionNumber": "1.0.0.NEXT", "dependencies": [
         {
             "package": "Tutorial",
             "versionNumber": "0.2.0.LATEST"

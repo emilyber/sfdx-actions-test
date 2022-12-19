@@ -16,7 +16,13 @@ jobs:
         pwd
         cat mywork/sfdx-project.json | jq '[.packageDirectories[].dependencies[]]' > list.json
         cat list.json
-
+        # salva o arquivo de pacotes instalados em json
+        cat installed.json | jq '[.result[]]' > pacotes_instalados.json
+        
+        # for olhando para o json.list procurando o nome "package"" dele no "SubscriberPackageName", se achar verifica se o versionNumber do list é menor que o SubscriberPackageVersionNumber
+        # problema é, o SubscriberPackageVersionNumber vai ter os 4 até build , o versionNumber tem até "path" precisa tratar para comparar só os 3 numeros
+        # salvar que para aquele pacotes o item[1] da dependencia precisa ou não ser instalado
+        
     - name: write without show
       run: |
         echo "antes"
