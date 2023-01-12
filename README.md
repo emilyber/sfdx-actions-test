@@ -4,7 +4,7 @@ Could you please clarify some doubts about the docker code?
 
 When uploading the docker image, I already need to point a user and a password, as stated in flossumpmd's dockerhub documentation
 Something like:
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.dev/emilyber/sfdx-actions-test/blob/5ed3b0a14d7acf0b3c1bbcaf7b82ae3682e3cdfc/Captura%20de%20tela%202023-01-12%20072716.png)
 
 
 
