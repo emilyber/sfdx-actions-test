@@ -1,0 +1,41 @@
+> apex_pmd@2.5.0 start
+> node index.js
+Port: 5000
+Start
+Start getting attachment
+Count=1
+End getting attachment
+success
+Start getting rules
+End getting rules
+success
+runPMD
+Jan 20, 2023 5:34:00 PM net.sourceforge.pmd.RuleSetFactory parseRuleReferenceNode
+WARNING: Discontinue using Rule name category/apex/codestyle.xml/VariableNamingConventions as it is scheduled for removal from PMD. PMD 7.0.0 will remove support for this Rule.
+Jan 20, 2023 5:34:02 PM net.sourceforge.pmd.RuleSetFactory parseRuleReferenceNode
+WARNING: Discontinue using Rule name category/apex/performance.xml/AvoidSoslInLoops as it is scheduled for removal from PMD. PMD 7.0.0 will remove support for this Rule.
+Jan 20, 2023 5:34:02 PM net.sourceforge.pmd.RuleSetFactory parseRuleReferenceNode
+WARNING: Discontinue using Rule name category/apex/performance.xml/AvoidDmlStatementsInLoops as it is scheduled for removal from PMD. PMD 7.0.0 will remove support for this Rule.
+Jan 20, 2023 5:34:02 PM net.sourceforge.pmd.RuleSetFactory parseRuleReferenceNode
+WARNING: Discontinue using Rule name category/apex/performance.xml/AvoidSoqlInLoops as it is scheduled for removal from PMD. PMD 7.0.0 will remove support for this Rule.
+Jan 20, 2023 5:34:03 PM net.sourceforge.pmd.PMD encourageToUseIncrementalAnalysis
+WARNING: This analysis could be faster, please consider using Incremental Analysis: https://pmd.github.io/pmd-6.48.0/pmd_userdocs_incremental_analysis.html
+PMD analysis finished
+success
+Start save results
+Number of issues found: 46
+Created record id : 00PDn000001A22WMAS
+total : 57
+fetched : 57
+End save results
+success
+Updated Branch Successfully : a0BDn000000vwrFMAQ
+Updated Flosum_Task Successfully : a0TDn000000jA5eMAE
+Updated Review_Result Successfully : a1CDn000000yFWfMAM
+Created 46 records.
+success
+delete temp folder: a0TDn000000jA5eMAE
+finish
+End cleanFolder
+success
+endPost
