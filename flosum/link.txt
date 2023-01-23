@@ -4,7 +4,7 @@ https://l4sqoz5s66.execute-api.sa-east-1.amazonaws.com
 1- salvando o settings na org da flossum para rodar pmd, log:
 13.110.246.8 - - [23/Jan/2023:17:23:44 +0000] "POST POST /oauth/token HTTP/1.1" 200 176 fNNZChbYGjQEPxA=
 
-2- executando o PmD para uma branch, log:
+2- executando o PmD para uma branch (aparentemente vai pelo jsforce.Connection), log:
 13.110.246.8 - - [23/Jan/2023:17:24:55 +0000] "POST POST /apexPMD HTTP/1.1" 200 42 fNNkIi1zmjQEPKg=
 
 <<<<<< não loga novamente a cada vez que o colaborador selecionar para rodar a analise, só roda uma vez quando se configura o settings.
