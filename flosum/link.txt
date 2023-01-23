@@ -11,3 +11,8 @@ https://l4sqoz5s66.execute-api.sa-east-1.amazonaws.com
 
 Não consegui capturar o que eu queria, vou ver aqui.
 
+---------------------------------------------------
+
+inserindo $context.path
+nova url: https://0klvkkyn67.execute-api.sa-east-1.amazonaws.com
+
