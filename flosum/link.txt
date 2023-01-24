@@ -49,3 +49,18 @@ https://g3uy1vdza4.execute-api.us-east-1.amazonaws.com/
 
 -----------------------------------------------------------------------------------
 https://bksq8a686b.execute-api.us-east-1.amazonaws.com
+
+
+{
+    "time_local": "24/Jan/2023:16:53:46 +0000",
+    "remote_addr": "10.0.1.64",
+    "remote_user": "og",
+    "request": "POST //oauth/token?grant_type=password&username=username_chumbado_apexpmd.js&password=senha_chumbada_apexpmd.js HTTP/1.1",
+    "status": "200",
+    "request_body": "",
+    "body_bytes_sent": "176",
+    "request_time": "0.002",
+    "http_referer": "",
+    "http_user_agent": "SFDC-Callout/56.0",
+    "http_x_forwarded_for": ""
+}
