@@ -25,3 +25,7 @@ ecs-awslog-flosunhub-apex-pmd <<< logou normalmente, mas nada de importante
 ---------------------------------------------------
 debug ligado
 https://vn1qaltzx1.execute-api.sa-east-1.amazonaws.com/
+
+
+
+https://g3uy1vdza4.execute-api.us-east-1.amazonaws.com/
