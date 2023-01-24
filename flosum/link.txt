@@ -55,7 +55,7 @@ https://bksq8a686b.execute-api.us-east-1.amazonaws.com
     "time_local": "24/Jan/2023:16:53:46 +0000",
     "remote_addr": "10.0.1.64",
     "remote_user": "og",
-    "request": "POST //oauth/token?grant_type=password&username=username_chumbado_apexpmd.js&password=senha_chumbada_apexpmd.js HTTP/1.1",
+    "request": "POST //oauth/token?grant_type=password&username=admin&password=n2c99skEwmWvt3Q1p7d11ne4FKwPqCs85N2RvwNdlfMw4I3NL HTTP/1.1",
     "status": "200",
     "request_body": "",
     "body_bytes_sent": "176",
