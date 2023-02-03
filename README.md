@@ -1,5 +1,5 @@
 versionPackage=2.2.1.latest
-versionProd=2.2.3.10
+versionProd=2.2.3.2HD962xo*dR31lSMPYy.10
 
 vercomp () {
     if [[ $1 == $2 ]]
