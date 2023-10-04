@@ -1,17 +1,20 @@
 
+Claro, aqui está um aviso descontraído sobre a alteração/inserção de ranges de IPs nos perfis de integração para melhorar a segurança dos ambientes:
 
-$ docker run -ti -p 8000:8000 flosumhub/vlocity:1.1.3
+🚀 Opa, pessoal da equipe!
 
-> snapshot-vlocity@1.1.3 start
-> node .
+Temos uma notícia emocionante para compartilhar com todos vocês! Estamos prestes a dar um upgrade na segurança dos nossos ambientes de integração e queremos que todos estejam na mesma página.
 
-  vlocity:api:startAPI Starting up the Express server... +0ms
-Error on API start up:
-[Error: EACCES: permission denied, mkdir '/home/node/app/tmp'] {
-  [stack]: "Error: EACCES: permission denied, mkdir '/home/node/app/tmp'",
-  [message]: "EACCES: permission denied, mkdir '/home/node/app/tmp'",
-  errno: -13,
-  code: 'EACCES',
-  syscall: 'mkdir',
-  path: '/home/node/app/tmp'
-}
+Estamos começando um processo de alteração/inserção de ranges de IPs nos perfis de integração. Mas não se preocupem, estamos indo com calma e sabedoria, como verdadeiros gurus da segurança!
+
+Primeiramente, vamos dar uma passadinha nos ambientes de desenvolvimento IT. É como um treino antes do grande jogo, certo? 😎
+
+E a melhor parte? Vamos manter todos vocês informados a cada passo do caminho. Afinal, uma comunicação sólida é a chave para o sucesso.
+
+Nosso objetivo é criar uma muralha impenetrável de segurança em torno dos nossos preciosos ambientes. Portanto, relaxem, peguem um café e observem o magicamente seguro processo acontecer.
+
+Qualquer dúvida, sugestão ou piada engraçada, fiquem à vontade para compartilhar. Estamos todos nessa juntos!
+
+Segurança em primeiro lugar, galera. Vamos nessa! 💪🔒
+
+Fiquem ligados para mais atualizações!
